@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "course": {"title": "Learn JavaScript by Building 7 Games - Full Course",
+    "description":
+      ",'In this tutorial course, you will learn JavaScript by coding 7 retro grid-based games. Learn by doing and have 7 great projects for your career portfolio by the end of the course. Each game is done with minimal styling for you to take and make your own.",
+    "courseUrl": "https://www.youtube.com/watch?v=lhNdUVh3qCc"
+    }
+  },
+  {
+    "id": 2,
+    "course": {"title": "JavaScript Tutorial: Build Flappy Bird and Doodle Jump",
+    "description":
+      "Improve your JavaScript skills by building two popular millennial games: Doodle Jump & Flappy Bird.",
+    "courseUrl": "https://www.youtube.com/watch?v=lhNdUVh3qCc"
+    }
+  },
+  {
+    "id": 3,
+    "course": {"title": "Microsoft Excel Tutorial for Beginners - Full Course",
+    "description":
+      "Lean how to use Microsoft Excel from the beginning by creating 6 real-world projects. Most of the content applies to Google Sheets as well.",
+    "courseUrl": "https://www.youtube.com/watch?v=Vl0H-qTclOg"
+    }
+  },
+  {
+    "id": 4,
+    "course": {"title": "Python Tutorial - Python for Beginners [Full Course]",
+    "description":
+      "Python tutorial - Python for beginners - Go from Zero to Hero with Python (includes machine learning & web development project).",
+    "courseUrl": "https://www.youtube.com/watch?v=_uQrJ0TkZlc"
+    }
+  },
+  {
+    "id": 5,
+    "course": {"title": "Material UI Course",
+    "description":
+      "Hey gang & welcome to this Material UI tutorial for React. In this series we will be looking at what Material UI is & how to use it to create greate-looking React applications.",
+    "courseUrl":
+      "https://www.youtube.com/watch?v=0KEpWHtG10M&list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58"
+    }
+  },
+  {
+    "id": 6,
+    "course": {"title": "Python Machine Learning Course",
+    "description":
+      "This course is on machine learning with Python using Tensorflow",
+    "courseUrl":
+      "https://www.youtube.com/watch?v=ujTCoH21GlA&list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr"
+    }
+  },
+  {
+    "id": 7,
+    "course": {"title": "Web Development Course",
+    "description":
+      "This is an introductory course for anyone who is interested in web development and is new to programming",
+    "courseUrl":
+      "https://www.youtube.com/watch?v=HfTXHrWMGVY&list=PLZlA0Gpn_vH-cEDOofOujFIknfZZpIk3a"
+    }
+  },
+  {
+    "id": 8,
+    "course": {"title": "Professional Stock Trading Course Lesson 1 of 10 by Adam Khoo",
+    "description":
+      "If you want to learn how to trade stocks profitably, even if you are a complete beginner, The Professional Stock Trading Course by Adam Khoo is designed to give you all the tools and strategies to trade stocks confidently and profitably.",
+    "courseUrl": "https://www.youtube.com/watch?v=slBxM4J3BEA"}
+  }
+]
