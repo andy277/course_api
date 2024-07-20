@@ -7,25 +7,25 @@ from typing import Dict
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/api/courses")
 def get_courses() -> Dict:
     data = DataSourceAction.get_courses(__name__)
     return data
 
 
-@app.route("/courses/<int:course_id>")
+@app.route("/api/courses/<int:course_id>")
 def get_course(course_id: int) -> Dict:
     data = DataSourceAction.get_course(__name__, course_id)
     return data
 
 
-@app.post("/courses/create")
+@app.post("/api/courses/create")
 def create_course() -> Dict:
     request_data = request.get_json()
     data = DataSourceAction.create_course(__name__, request_data)
     return data
 
-@app.delete("/courses/<int:course_id>")
+@app.delete("/api/courses/<int:course_id>")
 def delete_course(course_id: int) -> Dict:
     data = DataSourceAction.delete_course(__name__, course_id)
     return data
