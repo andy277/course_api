@@ -1,7 +1,7 @@
 from extensions.config_log import config_log
-from flask import Flask
+from flask import request
 import json
-
+from typing import Dict
 
 
 filepath = "data/courses.json"
@@ -9,8 +9,7 @@ filepath = "data/courses.json"
 logger = config_log(__name__)
 
 class DataSourceAction():
-    @property
-    def get_courses(self):
+    def get_courses(self) -> Dict:
         with open(filepath, "r") as f:
             data = json.load(f)
 
@@ -30,7 +29,7 @@ class DataSourceAction():
             logger.warning(response)
             return response
 
-    def get_course(self, course_id):
+    def get_course(self, course_id) -> Dict:
         with open(filepath, "r") as f:
             data = json.load(f)
 
@@ -51,3 +50,65 @@ class DataSourceAction():
 
                 logger.warning(response)
                 return response
+
+    def create_course(self, new_course) -> Dict:
+        with open(filepath, "r") as f:
+            data = json.load(f)
+            id_list = []
+
+        for course in data:
+            id_list.append(course["id"])
+
+        id = max(id_list) + 1
+
+        created_course = {"course": new_course, "id": id }
+        data.append(created_course)
+
+        data = json.dumps(data)
+
+        with open(filepath, "w") as f:
+            f.write(data)
+
+        if data:
+            response = {
+                "message": "New Course Created",
+                "status": 200
+            }
+            logger.info(response)
+        else:
+            response = {
+                "message": "Failed to create new course",
+                "status": 404
+            }
+            logger.warning(response)
+
+        return response
+
+    def delete_course(self, course_id) -> Dict:
+        with open(filepath, "r") as f:
+            data = json.load(f)
+            filtered_tasks =[]
+
+            for course in data:
+                if course["id"] != course_id:
+                    filtered_tasks.append(course)
+
+        data = json.dumps(filtered_tasks)
+
+        with open(filepath, "w") as f:
+            f.write(data)
+
+        if data:
+            response = {
+                "message": "Course Deleted",
+                "status": 200
+            }
+            logger.info(response)
+        else:
+            response = {
+                "message": "Failed to delete course",
+                "status": 404
+            }
+            logger.warning(response)
+
+        return response
