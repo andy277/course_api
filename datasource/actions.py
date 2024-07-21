@@ -48,10 +48,8 @@ class DataSourceAction():
     def create_course(self, new_course) -> Dict:
         with open(filepath, "r") as f:
             data = json.load(f)
-            id_list = []
 
-        for course in data:
-            id_list.append(course["id"])
+        id_list = [course["id"] for course in data]
 
         id = max(id_list) + 1
 
@@ -81,11 +79,8 @@ class DataSourceAction():
     def delete_course(self, course_id) -> Dict:
         with open(filepath, "r") as f:
             data = json.load(f)
-            filtered_tasks =[]
 
-            for course in data:
-                if course["id"] != course_id:
-                    filtered_tasks.append(course)
+            filtered_tasks = [course for course in data if course["id"] != course_id]
 
         data = json.dumps(filtered_tasks)
 

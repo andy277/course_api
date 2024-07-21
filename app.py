@@ -1,6 +1,5 @@
 
 from flask import Flask,request
-import json
 from datasource.actions import DataSourceAction
 from typing import Dict
 
