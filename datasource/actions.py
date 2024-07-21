@@ -45,8 +45,6 @@ class DataSourceAction():
 
         return {"data": "Not Found", "status": 404}
 
-
-
     def create_course(self, new_course) -> Dict:
         with open(filepath, "r") as f:
             data = json.load(f)
@@ -109,7 +107,9 @@ class DataSourceAction():
 
         return response
 
-    def update_course(self, course_id, new_course) -> Dict:
+    def update_course(self, course_id) -> Dict:
+        new_course = request.get_json()
+
         with open(filepath, "r") as f:
             data = json.load(f)
 
@@ -125,7 +125,6 @@ class DataSourceAction():
         if data:
             response = {
                 "message": "Course Updated",
-                "data": data,
                 "status": 200
             }
             logger.info(response)
@@ -135,3 +134,5 @@ class DataSourceAction():
                 "status": 404
             }
             logger.warning(response)
+
+        return response
