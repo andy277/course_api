@@ -30,6 +30,11 @@ def delete_course(course_id: int) -> Dict:
     data = DataSourceAction.delete_course(__name__, course_id)
     return data
 
+@app.put("/api/courses/<int:course_id>")
+def update_course(course_id: int, new_course: Dict) -> Dict:
+    data = DataSourceAction.update_course(__name__, course_id, new_course)
+    return data
+
 
 
 
