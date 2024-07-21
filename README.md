@@ -57,7 +57,7 @@ Format data as below:
 ## DELETE request:
 ``/api/courses/<course_id>``
 
-Provide an ID to this endpoint to delete a specific course
+Provide an ID to this endpoint to delete a specific course.
 
 ### Example using Postman:
 ![Delete course example](assets/img/course_api_delete_course.png)
@@ -68,7 +68,16 @@ Provide an ID to this endpoint to delete a specific course
 ## PUT request:
 ``/api/courses/<course_id>``
 
-Send course data to this endpoint and provide ID to update an existing course
+Send course data to this endpoint and provide ID to update an existing course.
+
+Format data as below:
+```
+{
+  "courseUrl": str,
+    "description": str,
+    "title": str
+}
+```
 
 ### Example using Postman:
 
